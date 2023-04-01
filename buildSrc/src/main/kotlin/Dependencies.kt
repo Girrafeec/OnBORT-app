@@ -13,6 +13,7 @@ class Dependencies {
             const val composeUiTooling = "androidx.compose.ui:ui-tooling"
             const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.jetapackLifecycleVersion}"
             const val hiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:${Versions.androidxHilt}"
+            const val navigationCompose = "androidx.navigation:navigation-compose:${Versions.jetpackNavigationComponentVersion}"
         }
 
         object ViewModel {

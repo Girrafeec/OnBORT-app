@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import com.girrafeecstud.core_ui.ui.theme.UnscrambleTheme
+import com.girrafeecstud.onbort.feature_quests.UI.QuestDetailsScreen
+import com.girrafeecstud.onbort.feature_quests.UI.QuestsScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -14,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             UnscrambleTheme {
-                //TODO check if user if authorized and set as start destination login screen or home screen
+                QuestDetailsScreen(4)
             }
         }
     }
