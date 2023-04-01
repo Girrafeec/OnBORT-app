@@ -4,5 +4,5 @@ data class Article(
     val articleId: Long,
     val articleName: String,
     val articleTitleImageUrl: String? = null,
-    val chapters: List<Chapter>
+    val chapters: List<Chapter>? = null
 )

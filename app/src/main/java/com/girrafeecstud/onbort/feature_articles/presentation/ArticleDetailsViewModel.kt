@@ -24,13 +24,9 @@ class ArticleDetailsViewModel @Inject constructor(
     )
     override val state: StateFlow<ArticleDetailsUiState> = _state.asStateFlow()
 
-    var articleId: Long? = null
-
-    fun getArticleDetails() {
-        if (articleId == null)
-            return
+    fun getArticleDetails(articleId: Long) {
         viewModelScope.launch {
-            articlesInteractor.getArticle(articleId = articleId!!)
+            articlesInteractor.getArticle(articleId = articleId)
                 .onStart {
                     _state.update {
                         ArticleDetailsUiState(isLoading = true)

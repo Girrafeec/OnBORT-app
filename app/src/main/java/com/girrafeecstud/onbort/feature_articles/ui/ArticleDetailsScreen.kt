@@ -11,6 +11,5 @@ fun ArticleScreen(
     articleId: Long,
     articleDetailsViewModel: ArticleDetailsViewModel = hiltViewModel()
 ) {
-    articleDetailsViewModel.articleId = articleId
-    articleDetailsViewModel.getArticleDetails()
+    articleDetailsViewModel.getArticleDetails(articleId = articleId)
 }
