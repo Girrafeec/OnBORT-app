@@ -67,6 +67,7 @@ dependencies {
     implementation(Dependencies.Jetpack.Compose.composeMaterial)
     implementation(Dependencies.Jetpack.Compose.composeUiTooling)
     implementation(Dependencies.Jetpack.Compose.composeUiToolingPreview)
+    implementation(Dependencies.Jetpack.Compose.navigationCompose)
 
     // Unit-tests
     testImplementation(Dependencies.jUnit.jUnit)
@@ -91,6 +92,7 @@ dependencies {
     // Navigation
     implementation(Dependencies.Jetpack.Navigation.navigationFragmentKtx)
     implementation(Dependencies.Jetpack.Navigation.navigationUiKtx)
+
 
     // Retrofit
     implementation(Dependencies.Retrofit.retrofit)

@@ -18,7 +18,7 @@ class LoginViewModel @Inject constructor(
 ) : BaseViewModel<LoginUiState>() {
 
     override var _state: MutableStateFlow<LoginUiState> = MutableStateFlow(LoginUiState())
-    override val state: StateFlow<LoginUiState> get() = _state.asStateFlow()
+    override val state: StateFlow<LoginUiState> = _state.asStateFlow()
 
     init {
 
