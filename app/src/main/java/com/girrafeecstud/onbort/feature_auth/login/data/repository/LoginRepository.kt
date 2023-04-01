@@ -21,7 +21,7 @@ class LoginRepository @Inject constructor(
 
     private val loginRepositoryScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
-    override suspend fun login(user: UserLoginEntity): Flow<BusinessResult<EmptyResult>> =
+    override fun login(user: UserLoginEntity): Flow<BusinessResult<EmptyResult>> =
         loginDataSource.login(user = user).flatMapLatest { loginResult ->
             when (loginResult) {
                 is BusinessResult.Success -> {

@@ -7,6 +7,8 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import com.girrafeecstud.core_base.domain.base.BusinessErrorType
 import com.girrafeecstud.core_base.domain.base.BusinessResult
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class AuthSharedPreferencesDataSource @Inject constructor(
@@ -45,14 +47,15 @@ class AuthSharedPreferencesDataSource @Inject constructor(
             .putBoolean(USER_AUTHORIZED, false)
             .apply()
 
-    override suspend fun getUserToken(): BusinessResult<String> {
-        val result = sharedPreferences
-            .getString(USER_TOKEN, null)
+    override suspend fun getUserToken(): Flow<BusinessResult<String>> =
+        flow {
+            val result = sharedPreferences
+                .getString(USER_TOKEN, null)
 
-        if (result.equals(null))
-            return BusinessResult.Error(businessErrorType = BusinessErrorType.USER_UNAUTHORIZED)
-        return BusinessResult.Success(data = result)
-    }
+            if (result.equals(null))
+                emit(BusinessResult.Error(businessErrorType = BusinessErrorType.USER_UNAUTHORIZED))
+            emit(BusinessResult.Success(data = result))
+        }
 
     override suspend fun setUserToken(userToken: String) =
         sharedPreferences

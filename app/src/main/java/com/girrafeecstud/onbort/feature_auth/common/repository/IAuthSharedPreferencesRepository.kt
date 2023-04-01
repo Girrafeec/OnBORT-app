@@ -4,6 +4,7 @@ package com.girrafeecstud.onbort.feature_auth.common.repository
 
 import com.girrafeecstud.onbort.feature_auth.common.datasource.IAuthDataSource
 import com.girrafeecstud.core_base.domain.base.BusinessResult
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class IAuthSharedPreferencesRepository @Inject constructor(
@@ -19,7 +20,7 @@ class IAuthSharedPreferencesRepository @Inject constructor(
     override suspend fun setUserUnauthorized() =
         authDataSource.setUserUnauthorized()
 
-    override suspend fun getUserToken(): BusinessResult<String> =
+    override suspend fun getUserToken(): Flow<BusinessResult<String>> =
         authDataSource.getUserToken()
 
     override suspend fun setUserToken(userToken: String) =

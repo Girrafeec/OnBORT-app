@@ -3,6 +3,7 @@
 package com.girrafeecstud.onbort.feature_auth.common.repository
 
 import com.girrafeecstud.core_base.domain.base.BusinessResult
+import kotlinx.coroutines.flow.Flow
 
 interface IAuthRepository {
 
@@ -12,7 +13,7 @@ interface IAuthRepository {
 
     suspend fun setUserUnauthorized()
 
-    suspend fun getUserToken(): BusinessResult<String>
+    suspend fun getUserToken(): Flow<BusinessResult<String>>
 
     suspend fun setUserToken(userToken: String)
 
