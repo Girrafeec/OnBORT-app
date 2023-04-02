@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_flow"
+    app:startDestination="@id/main_flow_fragment">
+
+    <!--TODO start destination with loading screen?-->
+
+    <include
+        app:graph="@navigation/main_flow"/>
+
+<!--    <include-->
+<!--        app:graph="@navigation/auth_flow"/>-->
+
+    <include
+        app:graph="@navigation/quest_flow"/>
+
+    <include
+        app:graph="@navigation/article_flow"/>
+
+    <include
+        app:graph="@navigation/challenge_flow"/>
+
+    <action
+        android:id="@+id/action_global_auth_flow"
+        app:destination="@+id/auth_flow_fragment" />
+
+    <action
+        android:id="@+id/action_global_main_flow"
+        app:destination="@+id/main_flow_fragment"
+        app:popUpTo="@id/main_flow_fragment"
+        app:popUpToInclusive="true">
+
+        <argument
+            android:name="defaultScreen"
+            app:argType="com.girrafeecstud.onbort.navigation.DefaultMainFlowScreen"
+            android:defaultValue="HOME_SCREEN"/>
+
+    </action>
+
+    <action
+        android:id="@+id/action_global_quest_flow"
+        app:destination="@+id/quest_flow_fragment">
+
+        <argument
+            android:name="defaultScreen"
+            app:argType="com.girrafeecstud.onbort.navigation.DefaultQuestFlowScreen"
+            android:defaultValue="QUEST_DETAILS_SCREEN"/>
+
+    </action>
+
+<!--    <fragment-->
+<!--        android:id="@+id/auth_flow_fragment"-->
+<!--        android:name="com.girrafeecstud.onbort.feature_auth.ui.AuthFlowFragment"/>-->
+
+    <fragment
+        android:id="@+id/main_flow_fragment"
+        android:name="com.girrafeecstud.onbort.app.ui.MainFlowFragment"
+        android:layout="@layout/fragment_main_flow">
+
+        <argument
+            android:name="defaultScreen"
+            app:argType="com.girrafeecstud.onbort.navigation.DefaultMainFlowScreen"
+            android:defaultValue="HOME_SCREEN"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/quest_flow_fragment"
+        android:name="com.girrafeecstud.onbort.feature_quests.ui.QuestFlowFragment">
+
+        <argument
+            android:name="defaultScreen"
+            app:argType="com.girrafeecstud.onbort.navigation.DefaultQuestFlowScreen"
+            android:defaultValue="QUEST_DETAILS_SCREEN"/>
+
+    </fragment>
+
+</navigation>

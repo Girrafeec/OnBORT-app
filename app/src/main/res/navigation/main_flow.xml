@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/maps_flow"
+    app:startDestination="@id/home_fragment">
+
+    <argument
+        android:name="defaultScreen"
+        app:argType="com.girrafeecstud.onbort.navigation.DefaultMainFlowScreen"
+        android:defaultValue="HOME_SCREEN"/>
+
+    <action
+        android:id="@+id/action_home_fragment"
+        app:destination="@id/home_fragment"
+        app:popUpTo="@id/home_fragment"
+        app:popUpToInclusive="true"/>
+
+    <action
+        android:id="@+id/action_quests_fragment"
+        app:destination="@id/quests_fragment"
+        app:popUpToInclusive="true"/>
+
+    <action
+        android:id="@+id/action_extras_fragment"
+        app:destination="@id/extras_fragment"
+        app:popUpToInclusive="true"/>
+
+    <action
+        android:id="@+id/action_profile_fragment"
+        app:destination="@id/profile_fragment"
+        app:popUpToInclusive="true"/>
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.girrafeecstud.onbort.app.ui.HomeFragment"
+        android:label="FragmentHome"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/quests_fragment"
+        android:name="com.girrafeecstud.onbort.feature_quests.ui.QuestsFragment"
+        android:label="FragmentQuests"
+        tools:layout="@layout/fragment_quests" />
+
+    <fragment
+        android:id="@+id/extras_fragment"
+        android:name="com.girrafeecstud.onbort.app.ui.ExtrasFragment"
+        android:label="FragmentExtras"
+        tools:layout="@layout/fragment_extras" />
+
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.girrafeecstud.onbort.app.ui.ProfileFragment"
+        android:label="FragmentProfile"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>

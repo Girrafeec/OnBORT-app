@@ -7,10 +7,10 @@ data class Submission(
     val challengeId: Long,
     @SerializedName("submissionId")
     val submissionId: Long,
-    @SerializedName("dateTime")
+    @SerializedName("datetime")
     val dateTime: String,
-    @SerializedName("completed")
-    val completed: Boolean,
+    @SerializedName("submissionPercent")
+    val submissionPercent: Double,
     @SerializedName("challengePassed")
     val challengePassed: Boolean
 )

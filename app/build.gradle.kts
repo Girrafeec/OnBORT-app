@@ -61,13 +61,13 @@ dependencies {
     implementation(Dependencies.AndroidX.Core.coreKtx)
 
     // Compose
-    implementation(platform(Dependencies.Jetpack.Compose.composeBom))
-    implementation(Dependencies.Jetpack.Compose.composeUi)
-    implementation(Dependencies.Jetpack.Compose.activityCompose)
-    implementation(Dependencies.Jetpack.Compose.composeMaterial)
-    implementation(Dependencies.Jetpack.Compose.composeUiTooling)
-    implementation(Dependencies.Jetpack.Compose.composeUiToolingPreview)
-    implementation(Dependencies.Jetpack.Compose.navigationCompose)
+//    implementation(platform(Dependencies.Jetpack.Compose.composeBom))
+//    implementation(Dependencies.Jetpack.Compose.composeUi)
+//    implementation(Dependencies.Jetpack.Compose.activityCompose)
+//    implementation(Dependencies.Jetpack.Compose.composeMaterial)
+//    implementation(Dependencies.Jetpack.Compose.composeUiTooling)
+//    implementation(Dependencies.Jetpack.Compose.composeUiToolingPreview)
+//    implementation(Dependencies.Jetpack.Compose.navigationCompose)
 
     // Unit-tests
     testImplementation(Dependencies.jUnit.jUnit)
