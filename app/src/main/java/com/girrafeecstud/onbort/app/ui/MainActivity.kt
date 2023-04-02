@@ -64,9 +64,7 @@ class MainActivity : AppCompatActivity(), ToFlowNavigable {
 //        }
 
         flowNavigator.setStartDestination(
-            destination = FlowDestination.MapsFlow(
-                _defaultScreen = DefaultMainFlowScreen.HOME_SCREEN
-            )
+            destination = FlowDestination.AuthFlow()
         )
 
     }

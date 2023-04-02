@@ -63,7 +63,7 @@ class QuestsFragment : BaseFragment(), QuestViewHolder.OnQuestItemClickListener 
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 questsViewModel.state
                     .onEach {state ->
-
+                        setState(state = state)
                     }
                     .launchIn(viewLifecycleOwner.lifecycleScope)
             }
@@ -78,10 +78,12 @@ class QuestsFragment : BaseFragment(), QuestViewHolder.OnQuestItemClickListener 
 
         when (state.isLoading) {
             true -> {
-
+                binding.progres.visibility = View.VISIBLE
+                binding.quests.visibility = View.GONE
             }
             false -> {
-
+                binding.progres.visibility = View.GONE
+                binding.quests.visibility = View.VISIBLE
             }
         }
 

@@ -32,9 +32,13 @@ class MainFlowNavigator : Navigator<MainFlowDestination> {
 //        }
     }
 
-    override fun setStartDestination(destination: MainFlowDestination) {
+    override fun setStartDestination(
+        destination: MainFlowDestination,
+        serializableArgs: Map<String, java.io.Serializable>?,
+        stringArgs: Map<String, String>?
+    ) {
         navController?.setStartDestination(
-            destination = destination, graphId = R.navigation.main_flow
+            destination = destination, graphId = R.navigation.main_flow, serializableArgs = serializableArgs, stringArgs = stringArgs
         )
     }
 }

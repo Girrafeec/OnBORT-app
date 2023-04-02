@@ -1,11 +1,18 @@
 package com.girrafeecstud.onbort.feature_quests.domain
 
+import com.google.gson.annotations.SerializedName
+
 data class Quest(
-    val questId: Long = 1,
-    val optional: Boolean = false,
-    val name: String = "Complete task",
-    val descriptions: String = "random description",
-    val type: String? = null,
-    val articleId: Long? = null,
-    val stageCoins: Int? = null
+    @SerializedName("questId")
+    val questId: Long,
+    @SerializedName("optional")
+    val optional: Boolean ,
+    @SerializedName("passed")
+    val passed: Boolean ,
+    @SerializedName("name")
+    val name: String,
+    @SerializedName("description")
+    val description: String,
+    @SerializedName("stages")
+    val stages: List<Stage>
 )

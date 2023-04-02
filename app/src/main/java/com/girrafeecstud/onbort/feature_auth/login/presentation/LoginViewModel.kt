@@ -28,7 +28,7 @@ class LoginViewModel @Inject constructor(
         viewModelScope.launch {
             loginUseCase(user = user)
                 .onStart {
-                // TODO make loading state
+                    _state.update { LoginUiState(isLoading = true) }
                 }
                 .onEach { result ->
                     when (result) {
@@ -39,7 +39,7 @@ class LoginViewModel @Inject constructor(
                             //TODO make error state
                         }
                         is BusinessResult.Success -> {
-                            //TODO make successful state
+                            _state.update { LoginUiState(loginPassed = true) }
                         }
                     }
                 }

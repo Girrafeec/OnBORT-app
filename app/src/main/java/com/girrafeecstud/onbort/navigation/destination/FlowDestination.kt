@@ -18,7 +18,7 @@ sealed class FlowDestination(
     class AuthFlow(
     ) : FlowDestination(_destinationId = R.id.auth_flow_fragment)
 
-    class MapsFlow(
+    class MainFlow(
         _defaultScreen: DefaultMainFlowScreen =
             DefaultMainFlowScreen.HOME_SCREEN
     ) : FlowDestination(
@@ -26,8 +26,9 @@ sealed class FlowDestination(
         defaultScreen = _defaultScreen
     )
 
-    class QuestFlow(
-        _defaultScreen: DefaultQuestFlowScreen =
+    data class QuestFlow(
+        val questId: String? = null,
+        val _defaultScreen: DefaultQuestFlowScreen =
             DefaultQuestFlowScreen.QUEST_DETAILS
     ) : FlowDestination(
         _destinationId = R.id.quest_flow_fragment,

@@ -47,6 +47,13 @@
             app:argType="com.girrafeecstud.onbort.navigation.DefaultQuestFlowScreen"
             android:defaultValue="QUEST_DETAILS_SCREEN"/>
 
+        <argument
+            android:name="questId"
+            app:argType="string"
+            android:defaultValue="@null"
+            app:nullable="true"/>
+
+
     </action>
 
 <!--    <fragment-->

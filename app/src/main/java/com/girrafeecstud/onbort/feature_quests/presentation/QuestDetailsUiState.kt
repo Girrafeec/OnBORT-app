@@ -7,5 +7,4 @@ data class QuestDetailsUiState (
     val isLoading: Boolean = false,
     val quest: Quest? = null,
     val onError: String? = null
-
 ) : UiState

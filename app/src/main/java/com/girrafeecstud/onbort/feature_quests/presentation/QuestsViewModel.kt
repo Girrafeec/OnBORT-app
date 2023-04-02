@@ -1,5 +1,6 @@
 package com.girrafeecstud.onbort.feature_quests.presentation
 
+import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.girrafeecstud.core_base.domain.base.BusinessResult
 import com.girrafeecstud.core_ui.presentation.BaseViewModel
@@ -17,6 +18,7 @@ class QuestsViewModel @Inject constructor(
     override val state: StateFlow<QuestsUiState> = _state.asStateFlow()
     init {
         viewModelScope.launch {
+            Log.i("tag", "quests vm launsh")
             questsInteractor.getQuestList()
                 .onStart {
                 _state.update { currentState ->
@@ -24,8 +26,6 @@ class QuestsViewModel @Inject constructor(
                         isLoading = true
                     )
                 }
-
-
             }
                 .onEach { result ->
                     _state.update { currentState ->
@@ -43,6 +43,7 @@ class QuestsViewModel @Inject constructor(
 
                         }
                         is BusinessResult.Success -> {
+                            Log.i("tag", "quest success")
                             _state.update {currentState ->
                                 currentState.copy(
                                     questsList = result.data

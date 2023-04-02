@@ -11,6 +11,8 @@ class QuestViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     private fun bindQuestItem(quest: Quest, listener: OnQuestItemClickListener) {
+        binding.questName.text = quest.name
+        binding.questItem.setOnClickListener { listener.onQuestItemClickListener(quest = quest) }
     }
 
     fun bind(quest: Quest, listener: OnQuestItemClickListener) {

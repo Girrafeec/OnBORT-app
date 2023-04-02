@@ -3,7 +3,7 @@ plugins {
     id(Plugins.kotlinAndroid)
     id(Plugins.kotlinKapt)
     id(Plugins.hiltPlugin)
-    id(Plugins.safeArgs)
+//    id(Plugins.safeArgs)
     id(Plugins.kotlinParcelize)
 }
 

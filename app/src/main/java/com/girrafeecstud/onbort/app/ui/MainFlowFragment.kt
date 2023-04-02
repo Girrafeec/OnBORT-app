@@ -56,6 +56,7 @@ class MainFlowFragment : BaseFlowFragment(
         (requireActivity() as ToFlowNavigable)
             .navigateToScreen(
                 destination = FlowDestination.QuestFlow(
+                    questId = questId.toString(),
                     _defaultScreen = DefaultQuestFlowScreen.QUEST_DETAILS
                 )
             )

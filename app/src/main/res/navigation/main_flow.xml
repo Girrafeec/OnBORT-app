@@ -2,13 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/maps_flow"
-    app:startDestination="@id/home_fragment">
+    android:id="@+id/main_flow"
+    app:startDestination="@id/quests_fragment">
 
-    <argument
-        android:name="defaultScreen"
-        app:argType="com.girrafeecstud.onbort.navigation.DefaultMainFlowScreen"
-        android:defaultValue="HOME_SCREEN"/>
+<!--    <argument-->
+<!--        android:name="defaultScreen"-->
+<!--        app:argType="com.girrafeecstud.onbort.navigation.DefaultMainFlowScreen"-->
+<!--        android:defaultValue="HOME_SCREEN"/>-->
 
     <action
         android:id="@+id/action_home_fragment"
